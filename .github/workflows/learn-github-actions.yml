@@ -1,5 +1,4 @@
 name: print Secret Variable
-run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
   check-bats-version:
@@ -7,4 +6,5 @@ jobs:
     steps:
       - name: print Secret
         env:
-          super_secret: ${{ secrets.SuperSecret }}
+          super_secret: ${{ secrets.MY_SECRET }}
+        run: echo ${{super_secret}}
