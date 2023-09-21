@@ -4,6 +4,13 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout out of my repository
+        uses: actions/checkout@v4
+
+      - name: run script file
+        run: ./run.sh
+        shell: bash
+
       - name: print Secret
         env:
           MY_SECRET: ${{ secrets.MY_SECRET }}
