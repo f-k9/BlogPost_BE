@@ -1,8 +1,9 @@
-name: print Hello World
+name: print Secret Variable
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - run: echo $MY_SECRET
+      - env:
+      super_secret: ${{ secrets.SuperSecret }}
