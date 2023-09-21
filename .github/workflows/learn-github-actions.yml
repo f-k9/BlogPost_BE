@@ -3,6 +3,9 @@ on: [push]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./scripts
     steps:
       - name: checkout out of my repository
         uses: actions/checkout@v4
