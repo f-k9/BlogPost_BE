@@ -7,22 +7,19 @@ jobs:
       run:
         working-directory: ./scripts
     steps:
-      - name: checkout out of my repository
-        uses: actions/checkout@v4
-
       - name: run script file
         run: chmod +x run.sh && ./run.sh
         shell: bash
 
       - name: executing remote ssh commands using password
-        uses: appleboy/ssh-action@ v1.0.0
+        uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: 22
           local: scripts/run.sh
-          remote: /run.sh
+          remote: run.sh
           script: ./run.sh
 
       - name: print Secret
