@@ -7,10 +7,6 @@ jobs:
       run:
         working-directory: ./scripts
     steps:
-      - name: run script file
-        run: chmod +x run.sh && ./run.sh
-        shell: bash
-
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.0.0
         with:
@@ -21,8 +17,3 @@ jobs:
           local: scripts/run.sh
           remote: run.sh
           script: ./run.sh
-
-      - name: print Secret
-        env:
-          MY_SECRET: ${{ secrets.MY_SECRET }}
-        run: echo $MY_SECRET
