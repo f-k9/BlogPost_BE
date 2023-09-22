@@ -1,5 +1,5 @@
 name: print Secret Variable
-on: [push]
+on: [push, workflow_dispatch]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
