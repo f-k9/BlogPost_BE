@@ -15,5 +15,5 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: 22
           source: ./scripts/run.sh
-          target: run.sh
-          script: ./run.sh
+          target: .
+          script: chmod +x run.sh && ./run.sh
